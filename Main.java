@@ -7,5 +7,14 @@ public class Main{
 	}
 	String s = toString(sb);
 	String[] a = s.split("[,:]");
+
+    }
+
+    //folderとfileを連結してfolder\fileという文字列を返す
+    Stirng concatPath(String folder, String file){
+	if( !folder.endWith("\\") ){
+	    folder += "\\";
+	}
+	return folder + file;
     }
 }
