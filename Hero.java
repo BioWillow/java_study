@@ -11,9 +11,17 @@ public class Hero{
     }
 
     public String getName(){ return this.name; }
+
     //toStringのオーバーライド
     public String toString(){
 	return "勇者" + this.name + "/HP" + this.hp;
     }
 
+    //hashCodeのオーバーライド
+    public int hashCode(){
+	int Result = 37;
+	result = result * 31 + name.hashCode();
+	result = result * 31 + hp;
+	return result;
+    }
 }
