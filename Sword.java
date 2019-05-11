@@ -1,4 +1,4 @@
-public class Sword{
+public class Sword implements Cloneable{
     private int damage;
     private String name;
 
@@ -16,4 +16,11 @@ public class Sword{
     public void setDamage(int damage){ this.damage = damage; }
     public String getName(){ return this.name; }
     public void setName(String name){ this.name = name; }
+
+    public Sword clone(){
+	Sword result = new Sword();
+	result.name = this.name;
+	result.damage = this.damage;
+	return result;
+    }
 }
