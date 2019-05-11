@@ -1,11 +1,15 @@
-import java.time.*;
-import java.time.format.*;
-
 public class Main{
     public static void main(String[] args){
-	LocalDate now = LocalDate.now();
-	LocalDate future = now.plusDays(100);
-	DateTimeFormatter f = DateTimeFormatter.ofPattern("西暦yyyy年MM月dd日");
-	System.out.println( future.format(f) );
+	//次の情報を格納する適切なコレクションをList,Set,Mapから選択
+	/*
+	  (1)日本の47都道府県の名前
+	  (2)5人の生徒のテストの点数
+	  (3)過去の総理大臣の名前と任期
+	 */
+	/*
+	  (1)List
+	  (2)Set
+	  (3)Map
+	 */
     }
 }
