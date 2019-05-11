@@ -1,9 +1,11 @@
 public class Main{
     public static void main(String[] args){
-	String s = "abc,def:ghi";
-	String[] words = s.split("[,:]");
-	for(String w : words){
-	    System.out.print(w + "->");
+	//1から100までの整数を,で連結、その後,で分割して配列aに格納
+	StringBuilder sb = new StringBuilder();
+	for(int i=0; i<100; i++){
+	    sb.append(i+1).append(",");
 	}
+	String s = toString(sb);
+	String[] a = s.split("[,:]");
     }
 }
