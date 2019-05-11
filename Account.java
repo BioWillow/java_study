@@ -1,6 +1,6 @@
-public class Account{
+public class Account implements Comparable<Account>{
     String accountNo;
-
+    int number;
     public boolean equals(Object o){
 	//自身が引数なら無条件でtrue
 	if(o == this) return true;
@@ -14,5 +14,15 @@ public class Account{
 	    return false;
 	}
 	return true;
+    }
+
+    public int compareTo(Account obj){
+	if(this.number < obj.number){
+	    return -1;
+	}
+	if(this.number > obj.number){
+	    return 1;
+	}
+	return 0;
     }
 }
