@@ -1,8 +1,18 @@
+class Outer{
+    int outerField; static int outerStaticField;
+    static class Inner{
+	void InnerMethod(){
+	    outerStaticField = 10;
+	}
+    }
+
+    void outerMethod(){
+	Inner ic = new Inner();
+    }
+}
+
 public class Main{
     public static void main(String[] args){
-	Pocket<String> p = new Pocket<String>();
-	p.put("1192");
-	String s = p.get();
-	System.out.println(s);
+	Outer.Inner ic = new Outer.Inner();
     }
 }
