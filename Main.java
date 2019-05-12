@@ -1,18 +1,10 @@
-class Outer{
-    int outerField; static int outerStaticField;
-    static class Inner{
-	void InnerMethod(){
-	    outerStaticField = 10;
-	}
-    }
-
-    void outerMethod(){
-	Inner ic = new Inner();
-    }
-}
-
 public class Main{
     public static void main(String[] args){
-	Outer.Inner ic = new Outer.Inner();
+	Pocket<Object> pocket = new Pocket<Object>();
+	System.out.println("使い捨てのインスタンスを作りpocketに入れます");
+	pocket.put(new Object(){
+		String innerField;
+		void innerMethod(){innerField = "hello java"
+});
     }
 }
