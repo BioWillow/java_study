@@ -1,6 +1,14 @@
 public class Account implements Comparable<Account>{
-    String accountNo;
-    int number;
+    private int number;
+    private String accountNo;
+    private int balance;
+    private AccountType accountType;
+
+    public Account(String aNo, AccountType aType){
+	this.accountNo = aNo;
+	this.accountType = aType;
+    }
+
     public boolean equals(Object o){
 	//自身が引数なら無条件でtrue
 	if(o == this) return true;
@@ -16,6 +24,7 @@ public class Account implements Comparable<Account>{
 	return true;
     }
 
+    //sortするときの並び替えを補助する
     public int compareTo(Account obj){
 	if(this.number < obj.number){
 	    return -1;
