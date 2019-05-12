@@ -1,23 +1,15 @@
-import java.util.function.*;
-interface Func1{
-    boolean call(int x);
-}
-interface Func2{
-    String call(boolean male, String name);
-}
-
 public class Main{
     public static void main(String[] args){
-	FuncList funclist = new FuncList();
-	Func1 f1 = (int x) -> {return (x % 2 == 1);};
-	Func2 f2 = (boolean male, String name) -> {
-	    if(male = true){
-		return "Mr." + name;
-	    }else {
-		return "Ms." + name;
-	    }
-	};
-	System.out.println(f1.call(19));
-	System.out.println(f2.call(true,"Williams"));
+	Class<?> info1 = String.class;
+	System.out.println(info1.getSimpleName());
+	System.out.println(info1.getName());
+	System.out.println(info1.getPackage().getName());
+	System.out.println(info1.isArray());
+
+	Class<?> info2 = info1.getSuperclass();
+	System.out.println(info2.getName());
+
+	Class<?> info3 = args.getClass();
+	System.out.println(info3.isArray());
     }
 }
