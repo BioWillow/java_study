@@ -1,14 +1,17 @@
 import java.util.function.*;
+interface Func1{
+    boolean call(int x);
+}
+interface Func2{
+    String call(boolean male, String name);
+}
+
 public class Main{
     public static void main(String[] args){
-	//「2つの引数の差を求める処理」の実態を生み出し代入する
-	MyFunction func = (int a, int b) -> {return a - b;};
-	int a = func.call(5,3);
-	System.out.println("5-3="+a);
-
-	double pi = 3.1415;
-	MyFunction2 func2 = x -> x * x * pi;
-	double b = func2.call(3);
-	System.out.println("半径3の円の面積は"+b);
+	FuncList funclist = new FuncList();
+	Func1 f1 = FuncList::isOdd;
+	Func2 f2 = funclist::addNamePrefix;
+	System.out.println(f1.call(19));
+	System.out.println(f2.call(true,"Williams"));
     }
 }
