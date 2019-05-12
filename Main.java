@@ -1,10 +1,13 @@
+import java.util.function.*;
 public class Main{
+    public static int sub(int a,int b){
+	return a - b;
+    }
     public static void main(String[] args){
-	Pocket<Object> pocket = new Pocket<Object>();
-	System.out.println("使い捨てのインスタンスを作りpocketに入れます");
-	pocket.put(new Object(){
-		String innerField;
-		void innerMethod(){innerField = "hello java"
-});
+	//subメソッドの処理ロジックを変数funcに代入する
+	IntBinaryOperator func = Main::sub;
+	//変数funcに格納されている処理ロジックを引数5と3で実行する
+	int a = func.applyAsInt(5, 3);
+	System.out.println(a);
     }
 }
